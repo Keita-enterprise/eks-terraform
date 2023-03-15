@@ -1,5 +1,5 @@
 module "aws_vpc" {
-  source          = "https://github.com/I2BKeit/terraform-vpc-module.git"
+  source          = "https://github.com/I2BKeit/terraform-aws-vpc-module.git"
   networking      = var.networking
   security_groups = var.security_groups
 }
