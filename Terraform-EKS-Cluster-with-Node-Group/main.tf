@@ -1,5 +1,5 @@
 module "aws_vpc" {
-  source          = "github.com/erozedguy/AWS-VPC-terraform-module.git?ref=v0.1.0"
+  source          = "https://github.com/I2BKeit/AWS-VPC-terraform-mdodule.git?ref=ikapro"
   networking      = var.networking
   security_groups = var.security_groups
 }
