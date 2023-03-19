@@ -102,22 +102,21 @@ variable "node_groups" {
     })
   }))
   default = [
-    
     {
-      name           = "t2.medium-spot"
-      instance_types = ["t2.medium"]
+      name           = "t2-medium-standard"
+      instance_types = ["t2.large"]
       ami_type       = "AL2_x86_64"
-      capacity_type  = "SPOT"
+      capacity_type  = "ON_DEMAND"
       disk_size      = 20
       scaling_config = {
         desired_size = 2
-        max_size     = 3
+        max_size     = 2
         min_size     = 1
       }
       update_config = {
         max_unavailable = 1
       }
-    },
+    }
   ]
 
 }
