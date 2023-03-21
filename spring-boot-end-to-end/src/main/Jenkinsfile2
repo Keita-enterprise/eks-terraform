@@ -1,0 +1,10 @@
+pipeline{
+    agent any
+    stages{
+        stage('GitSouceCode'){
+            steps{
+                sh 'git 'https://github.com/I2BKeit/spring-boot-end-to-end.git''
+            }
+        }
+    }
+}
