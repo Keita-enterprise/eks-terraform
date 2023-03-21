@@ -1,15 +1,21 @@
 pipeline{
   agent any
-  tools {
-  terraform '/usr/location/bin'
-}
+  environment{
+AWS_ACCESS_KEY_ID = credentials('access_key')
+  AWS_SECRET_ACCESS_KEY = credentials('scret_key')
+  AWS_DEFAULT_REGION = "us-east-1"
+  }
   stages{
-    
-    stage('terraform init'){
+    stage('Create an EKS Cluster'){
       steps{
-      sh 'terraform init'
-      sh 'terraform plan'
+        script{
+          dir('Terraform-EKS-Cluster-with-Node-Group')
+          sh 'terraform int'
+          sh 'terraform apply -auto-approve'
+        }
       }
     }
   }
+  
+
 }
